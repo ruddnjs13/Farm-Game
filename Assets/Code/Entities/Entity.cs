@@ -32,9 +32,14 @@ namespace Code.Entities
             _components.Values.OfType<IAfterInit>().ToList().ForEach(compo => compo.AfterInit());
         }
 
-        // public IEntityComponent GetCompo<T>() where T : IEntityComponent
-        // {
-        //     
-        // }
+        public IEntityComponent GetCompo<T>() where T : IEntityComponent
+        {
+            _components.TryGetValue(typeof(T), out IEntityComponent component);
+
+            if (component != null)
+                return component;
+            else
+                return default(T);
+        }
     }
 }
