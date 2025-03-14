@@ -5,6 +5,7 @@ namespace Code.Entities
 {
     public class EntityMover : MonoBehaviour, IEntityComponent
     {
+        [SerializeField] private float moveSpeed = 5f;
         private Entity _entity;
         
         private Rigidbody2D _rigidbody2D;
@@ -19,7 +20,7 @@ namespace Code.Entities
 
         private void FixedUpdate()
         {
-            _rigidbody2D.linearVelocity = Movement;
+            _rigidbody2D.linearVelocity = Movement*moveSpeed;
         }
 
         public void SetMovement(Vector2 movement)
@@ -27,7 +28,7 @@ namespace Code.Entities
              Movement = movement;
         }
 
-        private void StopImmediately()
+        public void StopImmediately()
         {
             _rigidbody2D.linearVelocity = Vector2.zero;
         }

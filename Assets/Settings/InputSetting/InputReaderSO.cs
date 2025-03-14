@@ -25,10 +25,14 @@ namespace Settings.InputSetting
         {
             _controls.Player.Disable();
         }
+        
+        
 
         public void OnMove(InputAction.CallbackContext context)
         {
             InputDirection = context.ReadValue<Vector2>().normalized;
         }
+        
+        
     }
 }

@@ -17,7 +17,7 @@ namespace Code.Entities.FSM
         {
             _entity = entity;
             _animParam = animParam;
-            _entityRenderer = entity.GetCompo<EntityRenderer>() as EntityRenderer;
+            _entityRenderer = _entity.GetCompo<EntityRenderer>() as EntityRenderer;
         }
 
         public virtual void Enter()

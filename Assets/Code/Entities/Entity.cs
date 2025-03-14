@@ -9,7 +9,7 @@ namespace Code.Entities
     {
         private Dictionary<Type, IEntityComponent> _components;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _components = new Dictionary<Type, IEntityComponent>();
             AddComponentToDictionary();

@@ -16,17 +16,25 @@ namespace Code.Entities.FSM
 
             foreach (StateSO state in stateList.states)
             {
-                Type type = Type.GetType(state.stateName);
+                Type type = Type.GetType(state.className);
                 Debug.Assert(type != null,$"Finding type is null : {state.className}");
-                EntityState entityState = Activator.CreateInstance(type) as EntityState;
+                EntityState entityState = Activator.CreateInstance(type,entity, state.animParam) as EntityState;
                 _states.Add(state.stateName, entityState);
             }
         }
 
-        public void ChangeState(EntityState newState)
+        public void ChangeState(string newStateName)
         {
             CurrentState?.Exit();
-            
+            EntityState newState = _states.GetValueOrDefault(newStateName);
+            Debug.Assert(newState != null,$"Finding state is null : {newStateName}");
+            CurrentState = newState;
+            CurrentState.Enter();
+        }
+
+        public void UpdateStateMachine()
+        {
+            CurrentState?.Update();
         }
     }
 }
