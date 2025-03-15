@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 namespace Code.Entities
@@ -23,9 +24,15 @@ namespace Code.Entities
             _rigidbody2D.linearVelocity = Movement*moveSpeed;
         }
 
-        public void SetMovement(Vector2 movement)
+        public void SetMovementX(float movementX)
         {
-             Movement = movement;
+            Vector2 movement = new Vector2(movementX, 0);
+            Movement = movement;
+        }
+        public void SetMovementY(float movementY)
+        {
+            Vector2 movement = new Vector2(0,movementY);
+            Movement = movement;
         }
 
         public void StopImmediately()

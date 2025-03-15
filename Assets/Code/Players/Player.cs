@@ -1,4 +1,5 @@
 using System;
+using Code.Animation;
 using Code.Entities;
 using Code.Entities.FSM;
 using Settings.InputSetting;
@@ -14,8 +15,13 @@ namespace Code.Players
 
         [SerializeField] private StateListSO _stateList;
 
+        [field: SerializeField] public AnimParamSO MOVE_XParam; 
+        [field: SerializeField] public AnimParamSO MOVE_YParam; 
+        [field: SerializeField] public AnimParamSO DIRECTION_XParam; 
+        [field: SerializeField] public AnimParamSO DIRECTION_YParam; 
+        
         private EntityStateMachine _stateMachine;
-
+        
         protected override void Awake()
         {
             base.Awake();

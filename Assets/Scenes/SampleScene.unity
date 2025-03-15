@@ -1052,6 +1052,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PlayerInput>k__BackingField: {fileID: 11400000, guid: 0448d31b5b71fa048b79ee16e73815d0, type: 2}
   _stateList: {fileID: 11400000, guid: 1e5c22588ace89c4fa77df840c7b86b5, type: 2}
+  MOVE_XParam: {fileID: 11400000, guid: e33a2e2372c42c745995b7139547f7ae, type: 2}
+  MOVE_YParam: {fileID: 11400000, guid: cbdbb10a887c41140b6f81001bd87c4c, type: 2}
+  DIRECTION_XParam: {fileID: 11400000, guid: 59b8a86b7cdd3d0439ba218eee397832, type: 2}
+  DIRECTION_YParam: {fileID: 11400000, guid: 1f0e78bb0eb57ae4084a88d9598ee46a, type: 2}
 --- !u!114 &2011887440
 MonoBehaviour:
   m_ObjectHideFlags: 0
